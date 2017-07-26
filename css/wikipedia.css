@@ -1,0 +1,51 @@
+body {
+    background-color: #003B6F;
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+}
+
+h1 small {
+    color: #FFD700;
+}
+
+#clear-form {
+    margin-right: 50px;
+}
+
+.main-container {
+    width: 80%;
+}
+
+.input-group-btn {
+    padding-left: 10px;
+}
+
+#search-input {
+    border-radius: 5px 0px 0px 5px;
+}
+
+#submit {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.resultsBox {
+    margin: 20px;
+    border: 1px solid #FFD700;
+    color: #000;
+}
+
+
+/*@media (max-width: 575px) {
+    .form-group {
+        width: 80%;
+    }
+}*/
+
+.glyphicon-remove {
+    color: #999999;
+    cursor: pointer; 
+    pointer-events: all;
+}

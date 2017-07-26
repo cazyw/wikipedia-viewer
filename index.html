@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <title>Wikipedia Viewer</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Indie+Flower" rel="stylesheet">
+    <link href="css\wikipedia.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid">
+<div class="page-header">
+  <h1>Wikipedia Viewer <small>The world is at your fingertips</small></h1>
+</div>
+</div>
+<div class="container-fluid main-container">
+
+
+<div class="container-fluid" >
+<div class="row">
+<div id="centeredDiv">
+
+<label for="search-input">Teach me! Find articles on...</label>
+
+<form id="search-form" class="form-inline">
+<div class="row">
+  <div class="col-md-10">
+    <div class="input-group form-group has-feedback">
+      <input type="text" class="form-control" id="search-input" name="search-input" placeholder="Enter a search term" value="">
+    <span id="clear-form" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+      <div class="input-group-btn">
+        <button type="submit" id="submit" class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </div>
+    </div><!-- /input-group -->
+
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+</form>
+
+<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Wiki</a>
+<div class="resultList"></div>
+
+</div>
+</div>
+</div>  
+
+
+
+    
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js\wikipedia.js"></script>
+    
+</body>
+</html>
