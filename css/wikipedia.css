@@ -16,7 +16,7 @@ h1 small {
 }
 
 .main-container {
-    width: 80%;
+    width: 90%;
 }
 
 .input-group-btn {
@@ -32,7 +32,7 @@ h1 small {
 }
 
 .resultsBox {
-    margin: 20px;
+    margin: 20px 0px 30px 0px;
     border: 1px solid #FFD700;
     color: #000;
 }
