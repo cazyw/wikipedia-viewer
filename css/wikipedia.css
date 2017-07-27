@@ -7,6 +7,10 @@ h1 {
     color: #fff;
 }
 
+#random {
+    margin-top: 5px;
+}
+
 h1 small {
     color: #FFD700;
 }
@@ -38,6 +42,7 @@ h1 small {
 }
 
 
+
 /*@media (max-width: 575px) {
     .form-group {
         width: 80%;
@@ -48,4 +53,10 @@ h1 small {
     color: #999999;
     cursor: pointer; 
     pointer-events: all;
+}
+
+
+
+.resultList {
+   margin-top: 0px;
 }

@@ -25,27 +25,31 @@
 <div class="container-fluid" >
 <div class="row">
 <div id="centeredDiv">
+<div id="top-section">
+  <label for="search-input">Teach me! Find articles on...</label>
 
-<label for="search-input">Teach me! Find articles on...</label>
+  <form id="search-form" class="form-inline">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="input-group form-group has-feedback">
+        <input type="text" class="form-control" id="search-input" name="search-input" placeholder="Enter a search term" value="">
+      <span id="clear-form" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <div class="input-group-btn">
+          <button type="submit" id="submit" class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </div>
+      </div><!-- /input-group -->
 
-<form id="search-form" class="form-inline">
-<div class="row">
-  <div class="col-md-10">
-    <div class="input-group form-group has-feedback">
-      <input type="text" class="form-control" id="search-input" name="search-input" placeholder="Enter a search term" value="">
-    <span id="clear-form" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-      <div class="input-group-btn">
-        <button type="submit" id="submit" class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search"></span>
-        </button>
-      </div>
-    </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+  </form>
+  <div id="random">
+    <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Wiki</a>
+  </div>
 
-  </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
-</form>
-
-<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Wiki</a>
+  <div class="errorBox"></div>
+</div>
 <div class="resultList"></div>
 
 </div>
