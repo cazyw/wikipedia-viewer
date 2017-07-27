@@ -62,12 +62,9 @@ $(document).ready(function(){
 
     let view = $(window).height();
     let section = $("#top-section").height();
-
-    function(){
-        section = $("#top-section").height();
     
     let gap = view - section;
-$(".resultList").css('margin-top', gap);
+    $(".resultList").css('margin-top', gap);
     // $(".resultList").css('margin-top', gap);
     $("#clear-form").on("click", function(){
         $("#search-input").val("");
