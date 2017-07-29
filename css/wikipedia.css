@@ -3,6 +3,9 @@ body {
     color: #fff;
 }
 
+button {
+    outline: none; 
+}
 .main-container {
     height: 100vh;
 }
@@ -34,6 +37,7 @@ h1 small {
 
 #search-input {
     border-radius: 0px 0px 0px 0px;
+    width: 70vw;
 }
 
 #submit {

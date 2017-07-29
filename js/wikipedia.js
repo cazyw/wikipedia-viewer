@@ -70,7 +70,7 @@ function validateInput(value){
 
 $(document).ready(function(){
 
-    let gap = '50vh';
+    let gap = '100px';
     $(".errorBox").css('visibility','hidden').html("no errors"); 
 
     $("#clear-form").on("click", function(){
