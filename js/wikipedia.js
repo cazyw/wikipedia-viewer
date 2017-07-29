@@ -87,7 +87,7 @@ $(document).ready(function(){
 
     $('#search-form').on("submit",function(e) {
         e.preventDefault();
-        window.scrollTo(0, 0);
+        
         $("input").blur();
         $(".resultList").animate({'opacity': 0}, 'slow', function(){
             $(".resultList").css('margin-top', gap);
@@ -100,6 +100,7 @@ $(document).ready(function(){
             $(".errorBox").css('visibility','visible');
             $(".errorBox").html("Did you enter anything?");
         } else {
+            window.scrollTo(0, 0);
             $("input").attr("readonly", true);
             $("#submit").attr("disabled", true);
             $(".errorBox").css('visibility','hidden');
