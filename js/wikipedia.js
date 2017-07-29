@@ -117,6 +117,7 @@ $(document).ready(function(){
         });
          $('#search-input').on("click", function(){
              if($("input").is('[readonly=readonly]')){
+                $("input").blur();
                 $(".errorBox").css('visibility','visible').html("Hit the X to clear the search");   
             }
         });       
