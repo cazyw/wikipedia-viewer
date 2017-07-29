@@ -71,14 +71,15 @@ function validateInput(value){
 $(document).ready(function(){
 
     let gap = '50vh';
+    $(".errorBox").css('visibility','hidden').html("no errors"); 
 
     $("#clear-form").on("click", function(){
         $("input").attr("disabled", false);
-        $("button").attr("disabled", false);
+        $("#submit").attr("disabled", false);
         $("#search-input").val("");
         $(".errorBox").css('visibility','hidden');
         $(".resultList").animate({'opacity': 0}, 'slow', function(){
-            $(".resultList").css('margin-top', gap);
+            $(".resultList").css('margin-top', gap).html("");
             $('.search-segment').animate({'margin-top': '100px'}, 'slow');
         });
     });
@@ -94,17 +95,18 @@ $(document).ready(function(){
         term = $("#search-form :input[name='search-input']")[0]["value"];
         console.log("Term:" , term, '-', term.length);
         if (!(/[A-z0-9]+/.test(term)) || term.length === 0 || term === "" || term === undefined || term === "undefined"|| term === " ") {
-            $(".errorBox").html("Please enter a valid search term");
+            $(".errorBox").css('visibility','visible');
+            $(".errorBox").html("Did you enter anything?");
         } else {
             $("input").attr("disabled", true);
-            $("button").attr("disabled", true);
+            $("#submit").attr("disabled", true);
             $(".errorBox").css('visibility','hidden');
             getWikiPage(term);
         }
         
         $('#search-input').mouseenter(function(){
             if($("input").is('[disabled=disabled]')){
-                $(".errorBox").css('visibility','visible').html("Clear the form please");    
+                $(".errorBox").css('visibility','visible').html("Hit the X to clear the search");    
             }
         
         });

@@ -23,75 +23,42 @@
 
 
 <div class="centeredDiv">
-<div class="search-segment">
-  <div><label for="search-input">Teach me! Find articles on...</label></div>
-  <div><form id="search-form" class="form-inline">
-    <div id="input-box" class="input-group form-group">
-      <input type="text" class="form-control" id="search-input" name="search-input" placeholder="Enter a search term" value="">
-      <span id="clear-form" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+<div class="search-segment col-xs-12">
+  <div><label for="search-input">Teach me Obi-wan! Find articles on...</label></div>
+  <div>
+  <form id="search-form" class="form-inline">
+    <div id="input-box" class="input-group">
+    <div class="input-group-btn">
+      <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">
+        <button id="random-button" class="btn btn-danger" type="button">
+          <span class="glyphicon glyphicon-question-sign"></span>
+        </button>
+      </a>
+        </div><div>
+      <input type="text" class="form-control" id="search-input" name="search-input" placeholder="Enter a search term..." value="">
+      <span id="clear-form" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span></div>
       <div class="input-group-btn">
-        <button type="submit" id="submit" class="btn btn-default" type="button">
+        <button type="submit" id="submit" class="btn btn-success" type="button">
           <span class="glyphicon glyphicon-search"></span>
         </button>
         </div>
-      </div><!-- /input-group -->
-  </form></div>
 
-  <div id="random">
-    <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Wiki</a>
+      </div><!-- /input-group -->
+  </form>
+  </div>
+  <div id="text">
+    <p>Or hit the ? to go to a random page.</p>
+  
   </div>
 </div> <!-- search segment -->
-  <div class="errorBox">error</div>
-  <div class="resultList">results</div>
+  <div class="errorBox"></div>
+  <div class="resultList"></div>
 
 </div> <!-- centered div -->
 
 
 </div> <!-- main container -->
 
-<!-- 
-<div class="form-group has-danger">
-  <label class="form-control-label" for="inputDanger1">Input with danger</label>
-  <input type="text" class="form-control form-control-danger" id="inputDanger1">
- 
-</div>
- -->
-
-<!-- <div class="container-fluid" >
-<div id="centeredDiv">
-<div id="test col-md-6">
-  <label for="search-input">Teach me! Find articles on...</label>
-
-  <form id="search-form" class="form-inline">
-      <div id="input-box" class="input-group form-group">
-        <input type="text" class="form-control" id="search-input" name="search-input" placeholder="Enter a search term" value="">
-      <span id="clear-form" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-        <div class="input-group-btn">
-          <button type="submit" id="submit" class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </div>
-      </div><!-- /input-group -->
-
-
-
-<!-- 
-  </form>
-  <div id="random">
-    <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Wiki</a>
-  </div>
-  </div>
-
-  <div class="errorBox">error</div>
-<div class="resultList">results</div>
-
-</div>
-</div>  
-
-
-
-    
-</div> --> 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

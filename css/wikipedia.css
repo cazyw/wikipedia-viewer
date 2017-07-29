@@ -29,14 +29,20 @@ h1 small {
 
 .input-group-btn {
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 #search-input {
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 0px 0px 0px 0px;
 }
 
 #submit {
     border-radius: 0px 5px 5px 0px;
+    padding-left: 10px;
+}
+
+#random-button {
+    border-radius: 0px 0px 0px 0px;
 }
 
 
@@ -56,6 +62,11 @@ h1 small {
 
 .test {
     margin: auto;
+}
+
+#text {
+    margin-top: 5px;
+    color: #FFD700;
 }
 
 /*@media (max-width: 575px) {
@@ -83,4 +94,9 @@ h1 small {
 
 .search-segment {
     margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
