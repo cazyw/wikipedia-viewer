@@ -76,7 +76,7 @@ h1 small {
 @media (max-width: 575px) {
     #search-input {
     border-radius: 0px 0px 0px 0px;
-    width: 72vw;
+    width: 70vw;
     }
 }
 
