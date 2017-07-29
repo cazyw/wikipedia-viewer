@@ -115,6 +115,10 @@ $(document).ready(function(){
                 $(".errorBox").css('visibility','hidden');    
             }
         });
+
+        $('#search-input').on("click", function(){
+            $(".errorBox").css('visibility','visible').html("Hit the X to clear the search");
+        });
         
     });
   
