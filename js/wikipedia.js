@@ -74,7 +74,7 @@ $(document).ready(function(){
     $(".errorBox").css('visibility','hidden').html("no errors"); 
 
     $("#clear-form").on("click", function(){
-        $(window).scrollTo(0, 0);
+        window.scrollTo(0, 0);
         $("input").attr("readonly", false);
         $("#submit").attr("disabled", false);
         $("#search-input").val("");
@@ -87,7 +87,7 @@ $(document).ready(function(){
 
     $('#search-form').on("submit",function(e) {
         e.preventDefault();
-        $(window).scrollTo(0, 0);
+        window.scrollTo(0, 0);
         $("input").blur();
         $(".resultList").animate({'opacity': 0}, 'slow', function(){
             $(".resultList").css('margin-top', gap);
