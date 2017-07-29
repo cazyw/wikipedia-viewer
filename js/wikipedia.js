@@ -74,7 +74,7 @@ $(document).ready(function(){
     $(".errorBox").css('visibility','hidden').html("no errors"); 
 
     $("#clear-form").on("click", function(){
-        $("input").attr("disabled", false);
+        $("input").attr("readonly", false);
         $("#submit").attr("disabled", false);
         $("#search-input").val("");
         $(".errorBox").css('visibility','hidden');
@@ -98,28 +98,29 @@ $(document).ready(function(){
             $(".errorBox").css('visibility','visible');
             $(".errorBox").html("Did you enter anything?");
         } else {
-            $("input").attr("disabled", true);
+            $("input").attr("readonly", true);
             $("#submit").attr("disabled", true);
             $(".errorBox").css('visibility','hidden');
             getWikiPage(term);
         }
         
         $('#search-input').mouseenter(function(){
-            if($("input").is('[disabled=disabled]')){
+            if($("input").is('[readonly=readonly]')){
                 $(".errorBox").css('visibility','visible').html("Hit the X to clear the search");    
             }
         
         });
         $('#search-input').mouseleave(function(){
-             if($("input").is('[disabled=disabled]')){
+             if($("input").is('[readonly=readonly]')){
                 $(".errorBox").css('visibility','hidden');    
             }
         });
+         $('#search-input').on("click", function(){
+             if($("input").is('[readonly=readonly]')){
+                $(".errorBox").css('visibility','visible').html("Hit the X to clear the search");   
+            }
+        });       
 
-        $('#search-input').on("click", function(){
-            $(".errorBox").css('visibility','visible').html("Hit the X to clear the search");
-        });
-        
     });
   
 });
