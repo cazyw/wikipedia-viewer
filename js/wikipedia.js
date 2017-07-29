@@ -3,32 +3,27 @@ function jsonlength(obj) {
 }
 
 
+function showError(errorMsg) {
+    $(".errorBox").css('visibility','visible').html(errorMsg);
+}
+
+function hideError(){
+    $(".errorBox").css('visibility','hidden').html("no errors"); 
+}
+
 function getWikiPage(term){
-
-
     var wikiLink = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=extracts&exintro&explaintext&exsentences=1&exlimit=10&callback=?&gsrsearch=" + term;
-
-    $.ajax({url: "demo_test.txt", success: function(result){
-        $("#div1").html(result);
-    }});
 
     $.ajax({
       dataType: 'json',
       url: wikiLink,
       success: function(data) {
-        console.log(JSON.stringify(data), "length: ", data.length);
-        
-        
+
+        // check if Wikipedia has returned any results
         if (!(data.hasOwnProperty("query"))) {
-            console.log("oops")
-            var html = "Hmmmm no results?";
-            $(".errorBox").css('visibility','visible').html(html);
-
+            showError("Hmmmm no results?")
         } else {
-
-
             $('.search-segment').animate({'margin-top': '0px'}, 'slow');
-
 
             var result = data["query"]["pages"];
             var html = "";
@@ -47,20 +42,13 @@ function getWikiPage(term){
                 html += "</div>";
                 html += "</a>";
             });
-            $('.resultList').css('display', 'block');
-            $('.resultList').animate({'margin-top': '0px', 'opacity': 1}, 'slow');
-            //$('.resultList').fadeIn('slow');
-            
-            
+            $('.resultList').animate({'margin-top': '0px', 'opacity': 1}, 'slow');        
             $(".resultList").html(html);
-
-            
-            
-           
+    
         }
       }, error: function(XMLHttpRequest, textStatus, errorThrown) {
-        $(".errorBox").css('visibility','visible').html("hmmm there was an error"); 
-    }
+            showError("hmmm there was an error"); 
+        }
     });
 }
 
@@ -68,17 +56,21 @@ function validateInput(value){
     return (!(value.length === 0));
 }
 
+function clearPage(){
+    $("input").attr("readonly", false);
+    $("#submit").attr("disabled", false);
+    $("#search-input").val("");
+    $(".errorBox").css('visibility','hidden');
+}
+
 $(document).ready(function(){
 
     let gap = '100px';
-    $(".errorBox").css('visibility','hidden').html("no errors"); 
+    hideError();
 
     $("#clear-form").on("click", function(){
         window.scrollTo(0, 0);
-        $("input").attr("readonly", false);
-        $("#submit").attr("disabled", false);
-        $("#search-input").val("");
-        $(".errorBox").css('visibility','hidden');
+        clearPage();
         $(".resultList").animate({'opacity': 0}, 'slow', function(){
             $(".resultList").css('margin-top', gap).html("");
             $('.search-segment').animate({'margin-top': '100px'}, 'slow');
@@ -93,9 +85,7 @@ $(document).ready(function(){
             $(".resultList").css('margin-top', gap);
         });
 
-        var term = "";
-        term = $("#search-form :input[name='search-input']")[0]["value"];
-        console.log("Term:" , term, '-', term.length);
+        var term = $("#search-form :input[name='search-input']")[0]["value"];
         if (!(/[A-z0-9]+/.test(term)) || term.length === 0 || term === "" || term === undefined || term === "undefined"|| term === " ") {
             $(".errorBox").css('visibility','visible');
             $(".errorBox").html("Did you enter anything?");
