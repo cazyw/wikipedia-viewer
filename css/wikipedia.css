@@ -73,11 +73,12 @@ h1 small {
     color: #FFD700;
 }
 
-/*@media (max-width: 575px) {
-    .form-group {
-        width: 80%;
+@media (max-width: 575px) {
+    #search-input {
+    border-radius: 0px 0px 0px 0px;
+    width: 85vw;
     }
-}*/
+}
 
 .glyphicon-remove {
     color: #999999;
