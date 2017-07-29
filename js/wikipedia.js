@@ -22,9 +22,14 @@ function getWikiPage(term){
         if (!(data.hasOwnProperty("query"))) {
             console.log("oops")
             var html = "Hmmmm no results?";
-            $(".errorBox").html(html);
+            $(".errorBox").css('visibility','visible').html(html);
 
         } else {
+
+
+            $('.search-segment').animate({'margin-top': '0px'}, 'slow');
+
+
             var result = data["query"]["pages"];
             var html = "";
             Object.keys(result).forEach(function(key, index) {
@@ -42,57 +47,73 @@ function getWikiPage(term){
                 html += "</div>";
                 html += "</a>";
             });
+            $('.resultList').css('display', 'block');
+            $('.resultList').animate({'margin-top': '0px', 'opacity': 1}, 'slow');
+            //$('.resultList').fadeIn('slow');
+            
             
             $(".resultList").html(html);
 
             
-            $(".resultList").fadeIn();
-            $('.resultList').animate({'margin-top': '0px'}, 'slow');
+            
+           
         }
       }, error: function(XMLHttpRequest, textStatus, errorThrown) {
-        $(".resultsList").html("Oh no - error!");
+        $(".errorBox").css('visibility','visible').html("hmmm there was an error"); 
     }
     });
 }
 
-
+function validateInput(value){
+    return (!(value.length === 0));
+}
 
 $(document).ready(function(){
-    //getWikiPage();
 
-    let view = $(window).height();
-    let section = $("#top-section").height();
-    
-    let gap = view - section;
-    $(".resultList").css('margin-top', gap);
-    // $(".resultList").css('margin-top', gap);
+    let gap = '50vh';
+
     $("#clear-form").on("click", function(){
+        $("input").attr("disabled", false);
+        $("button").attr("disabled", false);
         $("#search-input").val("");
-        $(".errorBox").html("");
-        $(".resultList").fadeOut("slow", function(){
+        $(".errorBox").css('visibility','hidden');
+        $(".resultList").animate({'opacity': 0}, 'slow', function(){
             $(".resultList").css('margin-top', gap);
-
+            $('.search-segment').animate({'margin-top': '100px'}, 'slow');
         });
     });
 
     $('#search-form').on("submit",function(e) {
         e.preventDefault();
         $("input").blur();
-
-        $(".resultList").fadeOut("slow", function(){
+        $(".resultList").animate({'opacity': 0}, 'slow', function(){
             $(".resultList").css('margin-top', gap);
         });
 
         var term = "";
         term = $("#search-form :input[name='search-input']")[0]["value"];
-        console.log("Term: " , term);
-        if (term == "" || term == undefined || term == "undefined") {
-            $(".resultList").html("Please enter a search term");
+        console.log("Term:" , term, '-', term.length);
+        if (!(/[A-z0-9]+/.test(term)) || term.length === 0 || term === "" || term === undefined || term === "undefined"|| term === " ") {
+            $(".errorBox").html("Please enter a valid search term");
         } else {
+            $("input").attr("disabled", true);
+            $("button").attr("disabled", true);
+            $(".errorBox").css('visibility','hidden');
             getWikiPage(term);
         }
         
+        $('#search-input').mouseenter(function(){
+            if($("input").is('[disabled=disabled]')){
+                $(".errorBox").css('visibility','visible').html("Clear the form please");    
+            }
+        
+        });
+        $('#search-input').mouseleave(function(){
+             if($("input").is('[disabled=disabled]')){
+                $(".errorBox").css('visibility','hidden');    
+            }
+        });
         
     });
-    
+  
 });

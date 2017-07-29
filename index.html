@@ -15,23 +15,55 @@
 <body>
 
 <div class="container-fluid main-container">
+
+
 <div class="page-header">
   <h1>Wikipedia Viewer <small>The world is at your fingertips</small></h1>
 </div>
+
+
+<div class="centeredDiv">
+<div class="search-segment">
+  <div><label for="search-input">Teach me! Find articles on...</label></div>
+  <div><form id="search-form" class="form-inline">
+    <div id="input-box" class="input-group form-group">
+      <input type="text" class="form-control" id="search-input" name="search-input" placeholder="Enter a search term" value="">
+      <span id="clear-form" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+      <div class="input-group-btn">
+        <button type="submit" id="submit" class="btn btn-default" type="button">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+        </div>
+      </div><!-- /input-group -->
+  </form></div>
+
+  <div id="random">
+    <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Wiki</a>
+  </div>
+</div> <!-- search segment -->
+  <div class="errorBox">error</div>
+  <div class="resultList">results</div>
+
+</div> <!-- centered div -->
+
+
+</div> <!-- main container -->
+
+<!-- 
+<div class="form-group has-danger">
+  <label class="form-control-label" for="inputDanger1">Input with danger</label>
+  <input type="text" class="form-control form-control-danger" id="inputDanger1">
+ 
 </div>
-<div class="container-fluid main-container">
+ -->
 
-
-<div class="container-fluid" >
-<div class="row">
+<!-- <div class="container-fluid" >
 <div id="centeredDiv">
-<div id="top-section">
+<div id="test col-md-6">
   <label for="search-input">Teach me! Find articles on...</label>
 
   <form id="search-form" class="form-inline">
-  <div class="row">
-    <div class="col-md-10">
-      <div class="input-group form-group has-feedback">
+      <div id="input-box" class="input-group form-group">
         <input type="text" class="form-control" id="search-input" name="search-input" placeholder="Enter a search term" value="">
       <span id="clear-form" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
         <div class="input-group-btn">
@@ -41,25 +73,25 @@
         </div>
       </div><!-- /input-group -->
 
-    </div><!-- /.col-lg-6 -->
-  </div><!-- /.row -->
+
+
+<!-- 
   </form>
   <div id="random">
     <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Wiki</a>
   </div>
+  </div>
 
-  <div class="errorBox"></div>
-</div>
-<div class="resultList"></div>
+  <div class="errorBox">error</div>
+<div class="resultList">results</div>
 
-</div>
 </div>
 </div>  
 
 
 
     
-</div>
+</div> --> 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
